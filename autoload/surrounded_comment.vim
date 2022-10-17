@@ -4,7 +4,7 @@ function! s:count_string_length(l) abort
 endfunction
 
 function! s:get_comment_out_token() abort
-    return substitute(&commentstring, '%s', '', '')
+    return substitute(substitute(&commentstring, '%s', '', ''), '\s', '', 'g')
 endfunction
 
 function! surrounded_comment#go() abort
